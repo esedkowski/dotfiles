@@ -1,0 +1,77 @@
+{
+	"layer": "top",
+	"modules-left": ["hyprland/workspaces", "mpd", "hyprland/mode"],
+	"modules-center": [],
+	"modules-right": ["network", "pulseaudio", "memory", "battery", "clock", "calendar"],
+	"mpd": {
+		"tooltip": false,
+		"format": "{stateIcon} {artist} - {album} - {title} ({elapsedTime:%M:%S}/{totalTime:%M:%S})",
+		"format-disconnected": "ﳌ",
+		"format-stopped": "",
+        "state-icons": {
+            "playing": "",
+            "paused": ""
+        }
+	},
+	"pulseaudio": {
+		"tooltip": false,
+		"scroll-step": 5,
+		"format": "{icon} {volume}%",
+		"format-icons": {
+      "mute": "🔇",
+			"default": ["🔈", "🔉", "🔊"]
+		}
+	},
+	"network": {
+		"tooltip": false,
+		"format-wifi": "   {essid}",
+		"format-ethernet": " {ipaddr}"
+	},
+	"cpu": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+	"memory": {
+		"tooltip": false,
+		"format": " {}%"
+	},
+  "clock": {
+      "format":  "{:%R %d.%m.%Y}",
+      "format-alt": "{:%R %d.%m.%Y}",
+      "tooltip-format": "<tt><small>{calendar}</small></tt>",
+      "calendar": {
+                    "mode"          : "year",
+                    "mode-mon-col"  : 3,
+                    "weeks-pos"     : "right",
+                    "on-scroll"     : 1,
+                    "format": {
+                              "months":     "<span color='#ffead3'><b>{}</b></span>",
+                              "days":       "<span color='#ecc6d9'><b>{}</b></span>",
+                              "weeks":      "<span color='#99ffdd'><b>W{}</b></span>",
+                              "weekdays":   "<span color='#ffcc66'><b>{}</b></span>",
+                              "today":      "<span color='#ff6699'><b><u>{}</u></b></span>"
+                              }
+                    },
+        "actions":  {
+                    "on-click-right": "mode",
+                    "on-click-forward": "tz_up",
+                    "on-click-backward": "tz_down",
+                    "on-scroll-up": "shift_up",
+                    "on-scroll-down": "shift_down"
+                    }
+    },
+    "battery": {
+        "format": "{icon}  {capacity}% ",
+        "format-icons": ["", "", "", "", ""],
+        "format-time": "{H}h{M}m",
+        "format-charging": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  {capacity}% - {time}",
+        "format-full": "<span font='Font Awesome 5 Free'></span>  <span font='Font Awesome 5 Free 11'>{icon}</span>  Charged",
+        "interval": 30,
+        "states": {
+            "warning": 25,
+            "critical": 10
+        },
+        "tooltip": false,
+        "on-click": "2"
+    },
+}
